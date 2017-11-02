@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bind Element Attributes</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="mySecondVueApp">
+		<div title="Written by David Bowie">Let's Dance, Blue Jean, Modern Love</div>
+
+		<div v-bind:title="songwriter">Something, When We Was Fab, Within You Without You</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  el: '#mySecondVueApp',
+		  data: {
+		    songwriter: "Written by George Harrison"
+		  }
+		});
+	</script>
+</body>
+</html>
