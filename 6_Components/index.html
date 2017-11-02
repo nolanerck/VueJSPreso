@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Components</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+
+	<div id="myVueApp">
+		<song-lyric></song-lyric>
+	</div>
+
+	<script>
+		Vue.component('song-lyric', {
+			template: "<div><em>'We don't need no education.'</em> --Pink Floyd</div>" // the WHOLE thing needs to be wrapped in an HTML tag of some kind
+		});
+
+		var app = new Vue({
+		  el: '#myVueApp'
+		});
+	</script>
+</body>
+</html>
