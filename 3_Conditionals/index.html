@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conditionals</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="conditionalExampleApp">
+		<div v-if="showMetalBands">
+			<h2>Favorite Metal Bands</h2>
+			<ol>
+				<li>Iron Maiden</li>
+				<li>Stretch Arm Strong</li>
+				<li>Ghost</li>
+				<li>Meshuggah</li>
+				<li>Lamb of God</li>
+			</ol>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  el: '#conditionalExampleApp',
+		  data: {
+		    showMetalBands: false
+		  }
+		});
+	</script>
+</body>
+</html>

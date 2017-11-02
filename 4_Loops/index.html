@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loops</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="loopExampleApp">
+		<div v-if="showPunkBands">
+			<h2>Favorite Punk Bands</h2>
+			<ol>
+				<li v-for="b in aryPunkBands">
+					{{ b.bandName }}
+				</li>
+			</ol>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  el: '#loopExampleApp',
+		  data: {
+		  		showPunkBands: true,
+		        aryPunkBands: [
+			      { bandName: '7 Seconds' },
+			      { bandName: 'Green Day' },
+			      { bandName: 'Operation Ivy' },
+			      { bandName: 'The Wynona Riders' },
+			      { bandName: 'Fang' }
+			    ]
+		  }
+		});
+	</script>
+</body>
+</html>
