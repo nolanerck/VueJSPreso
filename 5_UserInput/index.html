@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Input</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="userInputApp">
+		<div v-if="showPunkBands">
+			<h2>Favorite Punk Bands</h2>
+			<ol>
+				<li v-for="b in aryPunkBands">
+					{{ b.bandName }}
+				</li>
+			</ol>
+		</div>
+
+		<div id="addNewBand">
+			<input type="text" name="newBand" id="newBand" value="" placeholder="Type new band here" />
+			<button v-on:click="addBandToList">Add Band</button>
+		</div>
+
+	</div>
+
+	<script>
+		var app = new Vue({
+		  	el: '#userInputApp',
+		  	data: {
+		  		showPunkBands: true,
+		        aryPunkBands: [
+			      { bandName: '7 Seconds' },
+			      { bandName: 'Green Day' },
+			      { bandName: 'Operation Ivy' },
+			      { bandName: 'The Wynona Riders' },
+			      { bandName: 'Fang' }
+			    ]
+		  	},
+			methods: 
+			{
+				addBandToList: function () 
+				{
+					var _newBand = document.getElementById( "newBand" ).value;
+					app.aryPunkBands.push( { bandName: _newBand } );
+					document.getElementById( "newBand" ).value = "";
+				}
+			}
+		});
+	</script>
+</body>
+</html>
