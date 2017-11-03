@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Components w/ Props</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+
+	<div id="myVueApp">
+		<!-- Passing in plain text, not a variable. -->
+		<song-lyric artistname="David Bowie"></song-lyric>
+		<song-lyric artistname="John Lennon"></song-lyric>
+	</div>
+
+	<script>
+		Vue.component('song-lyric', {
+			props: ['artistname'],
+			template: "<div>Song: <em>'We don't need no education.'</em> -- {{ artistname }}</div>" // the WHOLE thing needs to be wrapped in an HTML tag of some kind
+		});
+
+		var app = new Vue({
+		  el: '#myVueApp'
+		});
+	</script>
+</body>
+</html>

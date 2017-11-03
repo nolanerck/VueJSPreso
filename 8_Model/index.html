@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Model</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myVueApp">
+		<input v-model="userName" placeholder="name me please" />
+		<p>User name is: {{ userName }}</p>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  el: '#myVueApp',
+		  data: {
+		    userName: ""
+		  }
+		});
+	</script>
+</body>
+</html>

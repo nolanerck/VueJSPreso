@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Components w/ Props And Binding</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+
+	<div id="myVueApp">
+		<h2>Favorite Songs</h2>
+		<ol>
+			<!-- Passing in plain text, not a variable. -->
+			<favorite-song v-for="s in aryFavoriteSongs"
+						   v-bind:thesong="s"
+						   v-bind:key="s.id">
+			</favorite-song>
+		</ol>
+
+	</div>
+
+	<script>
+		Vue.component('favorite-song', {
+			props: ['thesong'],
+			template: "<li>{{ thesong.songtitle }}</li>" // the WHOLE thing needs to be wrapped in an HTML tag of some kind
+		});
+
+		var app = new Vue({
+		  	el: '#myVueApp',
+
+			data: 
+			{
+				aryFavoriteSongs: [
+									{ id: 0, songtitle: 'Chloe Dancer - Mother Love Bone' },
+									{ id: 1, songtitle: 'Dry Ice - Green Day' },
+									{ id: 2, songtitle: 'Under Pressure - David Bowie and Queen' },
+									{ id: 3, songtitle: 'True Love - Far' },
+									{ id: 4, songtitle: 'Black Celebration - Depeche Mode' }
+								  ]
+			}
+		});
+	</script>
+</body>
+</html>

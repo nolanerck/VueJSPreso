@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myVueApp">
+  		<button v-on:click="counter += 1">Add 1</button>
+  		<p>The button above has been clicked {{ counter }} times.</p>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  	el: '#myVueApp',
+
+			data: 
+			{
+				counter: 0
+			}
+		});
+	</script>
+</body>
+</html>

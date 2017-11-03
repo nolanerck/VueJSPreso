@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="myVueApp">
+  		<button v-on:click="showGreeting">Show Greeting</button>
+	</div>
+
+	<script>
+		var app = new Vue({
+		  	el: '#myVueApp',
+
+			data: 
+			{
+				name: "Nolan"
+			},
+
+			methods: 
+			{
+				showGreeting: function (event) 
+				{
+			    	alert( 'Hello ' + this.name + '!' );
+			      	
+			      	if( event )
+			      	{
+			        	alert( event.target.tagName ); // regular native DOM event
+			      	}
+			    }
+			}
+		});
+	</script>
+</body>
+</html>
